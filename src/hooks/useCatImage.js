@@ -7,7 +7,7 @@ export function useCatImage ({fact}){
     useEffect(()=>{
         if (!fact) return
 
-        const threeFirstWords = fact.split(' ', 3).join(' ')
+        const threeFirstWords = fact.split(' ', 5).join(' ')
         console.log(threeFirstWords)
 
         fetch(`https://cataas.com/cat/says/${threeFirstWords}?size=50&color=red&json=true`)

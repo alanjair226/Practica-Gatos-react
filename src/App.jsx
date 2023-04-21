@@ -1,6 +1,6 @@
 import { useCatImage } from "./hooks/useCatImage"
 import { useCatFact } from "./hooks/useCatFact"
-
+import "../style.css"
 
 export function App () {
     const { fact, ReloadFact} = useCatFact()
@@ -13,10 +13,15 @@ export function App () {
 
     return(
         <main>
-            <h1>App gatitos</h1>
-            <button onClick={handleClick}>Get new Cat Fact</button>
-            {fact && <p>{fact}</p>}
-            {imageUrl && <img src={imageUrl} alt='Cat seys 3 Words'/>}
+            <section className="header">
+                <h1>App gatitos</h1>
+                <button onClick={handleClick}><span>Get new Cat Fact</span></button>
+            </section>
+            <section>
+                {fact && <p>{fact}</p>}
+                {imageUrl && <img src={imageUrl} alt='Cat seys 3 Words'/>}
+            </section>
+
         </main>   
     )
 }
